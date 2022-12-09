@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  dev:
+    image: "mcr.microsoft.com/devcontainers/go:0-1-bullseye"
+    depends_on:
+      - rabbitmq
+    volumes:
+      - ..:/workspace:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"  
+    network_mode: service:rabbitmq
+
+  rabbitmq:
+    image: "rabbitmq:3.11"
+    restart: unless-stopped
+    # ports:
+    #   - 5672:5672
