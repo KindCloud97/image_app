@@ -3,9 +3,7 @@ package nfntresize
 import (
 	"bytes"
 	"image"
-	_ "image/gif"
 	"image/jpeg"
-	_ "image/png"
 
 	"github.com/KindCloud97/image_app/model"
 	"github.com/KindCloud97/image_app/resizer"
